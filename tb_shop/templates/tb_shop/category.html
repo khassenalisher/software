@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% load staticfiles %} {% block metadescription %} {%
+if category %}
+{{ category.description | truncatewords: 155 }}
+{% else %} Welcome to the TedBacker store {% endif %} {% endblock } {% block
+title%}
+{%if category %}
+    {{ category.name }} - TedBacker
+    {% else %} 
+       See our collection - TedBacker 
+    {% endif %} 
+{% endblock %}

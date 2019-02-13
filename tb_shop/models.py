@@ -26,6 +26,7 @@ class Product(models.Model):
     #the image of the product
     img = models.ImageField(upload_to='product', blank=True)
     #if product is available
+    stock = models.IntegerField()
     available = models.BooleanField(default=True)
     #the date when the product is created
     created = models.DateTimeField(auto_now_add=True)
