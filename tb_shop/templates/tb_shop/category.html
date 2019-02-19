@@ -1,11 +1,63 @@
-{% extends "base.html" %} {% load staticfiles %} {% block metadescription %} {%
-if category %}
-{{ category.description | truncatewords: 155 }}
-{% else %} Welcome to the TedBacker store {% endif %} {% endblock } {% block
-title%}
-{%if category %}
-    {{ category.name }} - TedBacker
+{% extends "base.html" %} 
+{% load staticfiles %} 
+{% block metadescription %} 
+    {% if category %}
+        {{ category.description|truncatewords:155 }}
     {% else %} 
-       See our collection - TedBacker 
+        Welcome to the TedBacker store 
     {% endif %} 
+{% endblock %} 
+{% block title %}
+    {% if category %}
+        {{ category.name }} - TedBacker Store
+    {% else %} 
+        See our new Collection - TED BACKER store
+    {% endif %} 
+{% endblock %}
+{% block content %}
+    <!-- NAV -->
+    {% if contegory %}
+        <div>
+            <div>
+                <p><a href="{% url 'tb_shop:allProdCat' %}">Our Product Collection</a> | {{category.name}}</p>
+            </div>
+        </div>
+    {% endif %}
+    <div>
+    {% if category %}
+        <img src="{{category.image.url}}" alt="{{category.name}}">
+    </div>
+    <br>
+    <div>
+        <h1>{{category.name}}</h1>
+        <p>{{category.description}}</p>
+    </div>
+    {% else %}
+        <img src="{% static 'img/banner.jpg ' %}" alt="Our products collection">
+    </div>
+    <br>
+    <div>
+        <h1>Our products collections</h1>
+        <p>Our products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collections
+        Our products collectionsvOur products collectionsOur products collections
+        Our products collectionsOur products collectionsOur products collectionsOur products collections
+        Our products collectionsOur products collections
+        </p>
+    </div>
+    {% endif %}
+    <div>
+        <div>
+            {% for product in products %}
+                <div>
+                    <div>
+                        <a href=""><img src="{{product.image.url}}" alt={{product.name}}></a>
+                        <div>
+                            <h4>{{product.name}}</h4>
+                            <p>KZT {{prodcut.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}}   
+        </div>
+    </div>
 {% endblock %}
