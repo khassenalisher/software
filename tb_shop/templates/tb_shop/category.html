@@ -16,7 +16,7 @@
 {% endblock %}
 {% block content %}
     <!-- NAV -->
-    {% if contegory %}
+    {% if category %}
         <div>
             <div>
                 <p><a href="{% url 'tb_shop:allProdCat' %}">Our Product Collection</a> | {{category.name}}</p>
@@ -53,11 +53,11 @@
                         <a href=""><img src="{{product.image.url}}" alt={{product.name}}></a>
                         <div>
                             <h4>{{product.name}}</h4>
-                            <p>KZT {{prodcut.price}}</p>
+                            <p>KZT {{product.price}}</p>
                         </div>
                     </div>
                 </div>
-            {% endfor %}}   
+            {% endfor %} 
         </div>
     </div>
 {% endblock %}

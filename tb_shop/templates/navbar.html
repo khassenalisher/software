@@ -3,7 +3,9 @@
     <li>
       <a href="{% url 'tb_shop:allProdCat' %}">All Products</a>
     </li>
-
+    {% for cat in links %}
+      <li><a href="{{cat.get_url}}">{{cat.name}}</a></li>
+    {% endfor %}
     <li>   
       Your Cart()
     </li>

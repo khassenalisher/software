@@ -55,7 +55,7 @@ ROOT_URLCONF = 'software.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'tb_shop','templates/')],
+        'DIRS': [os.path.join(BASE_DIR, 'tb_shop', 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'tb_shop.context_processors.menu_links',
             ],
         },
     },
@@ -122,7 +123,7 @@ STATIC_URL = '/static/'
 # where our files will be saved
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
