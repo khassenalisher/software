@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block metadescription %}
+    TED BACKER
+{% endblock %}
+{% block title %}
+    Search 
+{% endblock %}
+{% block content %}
+    <div>
+        <p class="text-center tb_search_text">Search: <b>"{{ query }}"</b></p>
+    </div>
+    <div class="container">
+        <div clas="row mx-auto">
+            {% for product in products %}
+                <div class="tb_button_margin col-9 col-sm-12 col-rd-4 col-md-12 col-lg-4">
+                    <div class="text-center card" style="min-width: 18rem;">
+                        <a href="{{product.get_url}}"><img class="tb_image card-img-top"src="{{product.image.url}}" alt={{product.name}}></a>
+                        <div class="card">
+                            <h4>{{product.name}}</h4>
+                            <p>KZT {{product.price}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="row mx-auto">
+                    <p class="text-center tb_search_text">Not found</p>
+                </div>
+            {% endfor %} 
+        </div>
+    </div>
+{% endblock %}

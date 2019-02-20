@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('tb_shop/', include('tb_shop.urls')),
+    path('search/', include('tb_searcher.urls')),
 ]
 
 if settings.DEBUG:
