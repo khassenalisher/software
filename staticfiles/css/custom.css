@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav-item {
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.my_footer {
+  background-color: #f8f0fa;
+  height: 60px;
+}
+.my_footer p {
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+/* Category */
+.my_row_class {
+  padding-top: 15px;
+}
+.my_row_class .mx-auto {
+  color: #000;
+  font-size: 12px;
+}
+.my_row_class .mx-auto p {
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.my_prod_text {
+}

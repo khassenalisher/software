@@ -17,41 +17,41 @@
 {% block content %}
     <!-- NAV -->
     {% if category %}
-        <div>
-            <div>
+        <div class="row tb_row_class">
+            <div class="mx-auto">
                 <p><a href="{% url 'tb_shop:allProdCat' %}">Our Product Collection</a> | {{category.name}}</p>
             </div>
         </div>
     {% endif %}
-    <div>
+    <div class="mx-auto">
     {% if category %}
-        <img src="{{category.image.url}}" alt="{{category.name}}">
+        <img class="tb_image" src="{{category.img.url}}" alt="{{category.name}}">
     </div>
     <br>
     <div>
-        <h1>{{category.name}}</h1>
-        <p>{{category.description}}</p>
+        <h1 class="text-center tb_title">{{category.name}}</h1>
+        <p class="text-justify">{{category.description}}</p>
     </div>
     {% else %}
-        <img src="{% static 'img/banner.jpg ' %}" alt="Our products collection">
+        <img class="tb_image tb_image_padding" src="{% static 'img/ted_backer.jpeg' %}" alt="Our products collection">
     </div>
     <br>
     <div>
-        <h1>Our products collections</h1>
-        <p>Our products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collections
+        <h1 class="text-center tb_title">Our products collections</h1>
+        <p class="text-justify"> Our products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collectionsOur products collections
         Our products collectionsvOur products collectionsOur products collections
         Our products collectionsOur products collectionsOur products collectionsOur products collections
         Our products collectionsOur products collections
         </p>
     </div>
     {% endif %}
-    <div>
-        <div>
+    <div class="container">
+        <div clas="row mx-auto">
             {% for product in products %}
-                <div>
-                    <div>
-                        <a href=""><img src="{{product.image.url}}" alt={{product.name}}></a>
-                        <div>
+                <div class="tb_button_margin col-9 col-sm-12 col-rd-4 col-md-12 col-lg-4">
+                    <div class="text-center card" style="min-width: 18rem;">
+                        <a href="{{product.get_url}}"><img class="tb_image card-img-top"src="{{product.image.url}}" alt={{product.name}}></a>
+                        <div class="card">
                             <h4>{{product.name}}</h4>
                             <p>KZT {{product.price}}</p>
                         </div>
