@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tb_shop',
     'tb_searcher',
+    'tb_cart',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'software.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'tb_shop', 'templates/'), os.path.join(BASE_DIR, 'tb_searcher', 'templates/')],
+        'DIRS': [os.path.join(BASE_DIR, 'tb_shop', 'templates/'), os.path.join(BASE_DIR, 'tb_searcher', 'templates/'), os.path.join(BASE_DIR, 'tb_cart', 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

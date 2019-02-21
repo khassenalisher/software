@@ -33,7 +33,7 @@
         <p class="text-justify">{{category.description}}</p>
     </div>
     {% else %}
-        <img class="tb_image tb_image_padding" src="{% static 'img/ted_backer.jpeg' %}" alt="Our products collection">
+        <img class="tb_image tb_image_padding" style="width: 100%; height: auto;" src="{% static 'img/ted_backer.jpg' %}" alt="Our products collection">
     </div>
     <br>
     <div>
@@ -46,12 +46,12 @@
     </div>
     {% endif %}
     <div class="container">
-        <div clas="row mx-auto">
+        <div clas="row mx-auto" style="display:flex; flex-wrap: wrap;">
             {% for product in products.object_list %}
-                <div class="tb_button_margin col-9 col-sm-12 col-rd-4 col-md-12 col-lg-4">
+                <div class="tb_button_margin col-sm" style="margin: 0px; box-sizing:border-box; margin-bottom: 20px;">
                     <div class="text-center card" style="min-width: 18rem;">
-                        <a href="{{product.get_url}}"><img class="tb_image card-img-top"src="{{product.image.url}}" alt={{product.name}}></a>
-                        <div class="card">
+                        <a href="{{product.get_url}}"><img class="tb_image card-img-top" src="/static{{product.img.url}}" alt={{product.name}}></a>
+                        <div class="">
                             <h4>{{product.name}}</h4>
                             <p>KZT {{product.price}}</p>
                         </div>
