@@ -2,7 +2,19 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Category, Product
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.shortcuts import render
+from django.views.decorators.cache import cache_page
+from tb_shop.services import get_category
 
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
+
+@cache_page(CACHE_TTL)
+def prod_cat_view(request):
+    return render(request, 'templates/tb_shop/category.html', {
+       'category': get_category()
+    })
 
 def index(request):
     text_var = 'this is my first django web app'

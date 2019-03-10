@@ -18,12 +18,13 @@ from django.urls import path, include
 from tb_shop import views
 from django.conf import settings
 from django.conf.urls.static import static
-
+import debug_toolbar 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('tb_shop/', include('tb_shop.urls')),
     path('search/', include('tb_searcher.urls')),
+    path(r'^__debug__', include(debug_toolbar.urls))
 ]
 
 if settings.DEBUG:
@@ -31,3 +32,4 @@ if settings.DEBUG:
                           document_root=settings.STATIC_URL)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.STATIC_URL)
+
